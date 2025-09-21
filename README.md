@@ -50,23 +50,23 @@ PhotoShare is a modern, visually attractive social media platform designed for u
 ### Screenshots and Project Documentation
 Add images to the `images` folder and update the links below:
 
-![Homepage showing PhotoShare logo in playful font, navigation icons for profile, home, share, and logout, and a search bar labeled Search by hashtag. The main section displays Recent Posts in bold pink text, a search bar, and a featured post with a scenic landscape photo of mountains, trees, and a river at sunrise. The username naturelover appears below the photo. The background uses soft pastel gradients, creating a welcoming and cheerful atmosphere.]
+!Homepage showing PhotoShare logo in playful font, navigation icons for profile, home, share, and logout, and a search bar labeled Search by hashtag. The main section displays Recent Posts in bold pink text, a search bar, and a featured post with a scenic landscape photo of mountains, trees, and a river at sunrise. The username naturelover appears below the photo. The background uses soft pastel gradients, creating a welcoming and cheerful atmosphere.
 
 #### Profile Page
 Profile page displaying a user profile picture, username, and editable bio section. The interface includes buttons for changing the profile photo and updating the bio. The background features soft pastel gradients, and navigation icons are visible at the top. Text on the page includes Profile, Edit Bio, and Save. The overall tone is welcoming and encourages personalization.
-`![Alt text](images/Screenshot (141).png)`.
-`![Alt text](images/Screenshot (142).png)`.
+![Alt text](images/141.png)
+![Alt text](images/142.png)
 
 
 #### Share Page
-![Share page displaying a form for uploading a new photo and entering a caption. The main section includes fields labeled Upload Photo and Caption, with a prominent Share button below. Navigation icons for home, profile, share, and logout are visible at the top. The background features soft pastel gradients, creating a cheerful and inviting atmosphere. Text on the page includes Share a Picture, Upload Photo, Caption, and Share. The overall tone encourages creativity and sharing among users.]
-`![Alt text](images/Screenshot (143).png)`.
+!Share page displaying a form for uploading a new photo and entering a caption. The main section includes fields labeled Upload Photo and Caption, with a prominent Share button below. Navigation icons for home, profile, share, and logout are visible at the top. The background features soft pastel gradients, creating a cheerful and inviting atmosphere. Text on the page includes Share a Picture, Upload Photo, Caption, and Share. The overall tone encourages creativity and sharing among users.
+![Alt text](images/143.png)
 
 
 #### Comment Example
-![Comment section showing a user profile picture, username, and a comment reading Amazing shot with a heart emoji. The comment is displayed below a photo post in a clean, modern interface with a light background and rounded comment box. The overall tone is friendly and positive, encouraging interaction and appreciation among users.]
-`![Alt text](images/Screenshot (138).png)`.
-`![Alt text](images/Screenshot (139).png)`.
+!Comment section showing a user profile picture, username, and a comment reading Amazing shot with a heart emoji. The comment is displayed below a photo post in a clean, modern interface with a light background and rounded comment box. The overall tone is friendly and positive, encouraging interaction and appreciation among users.
+![Alt text](images/138.png)
+![Alt text](images/139.png)
 
 
 ### Customization & Development
@@ -74,11 +74,13 @@ Profile page displaying a user profile picture, username, and editable bio secti
 - For advanced features (user authentication, persistent storage), integrate with a backend (e.g., Node.js, Python, Java).
 
 ### CHAT WITH COPILOT
-`![Alt text](images/Screenshot (132).png)`.
-`![Alt text](images/Screenshot (133).png)`.
-`![Alt text](images/Screenshot (134).png)`.
-`![Alt text](images/Screenshot (135).png)`.
-`![Alt text](images/Screenshot (136).png)`.
+![Alt text](images/1.png)
+![Alt text](images/2.png)
+![Alt text](images/3.png)
+![Alt text](images/4.png)
+![Alt text](images/5.png)
+
+
 
 ### License
 This project is for educational and demonstration purposes.
