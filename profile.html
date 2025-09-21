@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>PhotoShare</h1>
+        <nav>
+                        <a href="profile.html" class="nav-icon" title="Profile">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="12" cy="8" r="4" fill="#222"/>
+                                    <rect x="4" y="16" width="16" height="4" rx="2" fill="#222"/>
+                                </svg>
+                        </a>
+                        <a href="index.html" class="nav-icon" title="Home">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="6" y="10" width="12" height="8" rx="2" fill="#222"/>
+                                    <polygon points="12,4 4,10 20,10" fill="#222"/>
+                                </svg>
+                        </a>
+                        <a href="share.html" class="nav-icon" title="Share">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="6" cy="12" r="3" fill="#222"/>
+                                    <circle cx="18" cy="6" r="3" fill="#222"/>
+                                    <circle cx="18" cy="18" r="3" fill="#222"/>
+                                    <line x1="8.5" y1="12" x2="15.5" y2="6" stroke="#222" stroke-width="2"/>
+                                    <line x1="8.5" y1="12" x2="15.5" y2="18" stroke="#222" stroke-width="2"/>
+                                </svg>
+                        </a>
+                        <a href="#" class="nav-icon" title="Logout">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="3" y="5" width="14" height="14" rx="2" fill="#222"/>
+                                    <polyline points="16,12 21,12 21,7" stroke="#ff6a88" stroke-width="2" fill="none"/>
+                                    <line x1="21" y1="12" x2="21" y2="17" stroke="#ff6a88" stroke-width="2"/>
+                                </svg>
+                        </a>
+        </nav>
+    </header>
+    <main>
+        <section class="profile">
+            <div class="profile-header">
+                <div class="profile-pic-container">
+                    <img id="profilePic" src="https://via.placeholder.com/120" alt="Profile Picture" class="profile-pic">
+                    <input type="file" id="picInput" accept="image/*" style="display:none">
+                    <div style="margin-top:0.5rem; text-align:center;">
+                        <button type="button" class="unified-btn" id="editPicBtn">Edit</button>
+                        <button type="button" class="unified-btn" id="savePicBtn" style="display:none">Save</button>
+                    </div>
+                </div>
+                <div class="profile-info">
+                    <h2>@myusername</h2>
+                    <p>Name: John Doe</p>
+                    <p>Email: johndoe@email.com</p>
+                </div>
+            </div>
+            <div class="bio">
+                <p id="bioText">Photography enthusiast. Love sharing moments and exploring new places. Always looking for the next adventure!</p>
+                <textarea id="bioEdit" style="display:none;width:100%;min-height:60px;"></textarea>
+                <div style="margin-top:0.5rem;">
+                    <button type="button" class="unified-btn" id="editBioBtn">Edit</button>
+                    <button type="button" class="unified-btn" id="saveBioBtn" style="display:none">Save</button>
+                </div>
+            </div>
+            <h3>My Posts</h3>
+            <div class="gallery">
+                <div class="post">
+                    <div class="post-image">
+                        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" alt="Post 1">
+                    </div>
+                    <div class="post-info">
+                        <span class="username">@myusername</span>
+                        <p>Mountain view</p>
+                        <div class="actions">
+                            <button class="unified-btn" onclick="increaseLike(this)">❤️ Like</button>
+                            <span class="likes">34 likes</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="post">
+                    <div class="post-image">
+                        <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca" alt="Post 2">
+                    </div>
+                    <div class="post-info">
+                        <span class="username">@myusername</span>
+                        <p>City lights</p>
+                        <div class="actions">
+                            <button class="like interactive" onclick="increaseLike(this)">❤️ Like</button>
+                            <span class="likes">21 likes</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+            function increaseLike(btn) {
+                const likesSpan = btn.nextElementSibling;
+                let likesText = likesSpan.textContent;
+                let likes = parseInt(likesText);
+                if (isNaN(likes)) {
+                    likes = parseInt(likesText.split(' ')[0]);
+                }
+                likes++;
+                likesSpan.textContent = likes + ' likes';
+                btn.disabled = true;
+                btn.textContent = '❤️ Liked';
+            }
+            // Editable bio and profile picture with localStorage
+            document.addEventListener('DOMContentLoaded', function() {
+                // Profile picture
+                var picInput = document.getElementById('picInput');
+                var profilePic = document.getElementById('profilePic');
+                var editPicBtn = document.getElementById('editPicBtn');
+                var savePicBtn = document.getElementById('savePicBtn');
+                // Bio
+                var bioText = document.getElementById('bioText');
+                var bioEdit = document.getElementById('bioEdit');
+                var editBioBtn = document.getElementById('editBioBtn');
+                var saveBioBtn = document.getElementById('saveBioBtn');
+
+                // Load saved bio and profile picture
+                if(localStorage.getItem('profilePic')) {
+                    profilePic.src = localStorage.getItem('profilePic');
+                }
+                if(localStorage.getItem('bioText')) {
+                    bioText.textContent = localStorage.getItem('bioText');
+                }
+
+                // Edit profile picture
+                editPicBtn.onclick = function() {
+                    picInput.style.display = 'block';
+                    editPicBtn.style.display = 'none';
+                    savePicBtn.style.display = 'inline-block';
+                };
+                savePicBtn.onclick = function() {
+                    picInput.style.display = 'none';
+                    editPicBtn.style.display = 'inline-block';
+                    savePicBtn.style.display = 'none';
+                    // Save to localStorage
+                    if(profilePic.src) {
+                        localStorage.setItem('profilePic', profilePic.src);
+                    }
+                };
+                picInput.onchange = function(e) {
+                    if (e.target.files && e.target.files[0]) {
+                        var reader = new FileReader();
+                        reader.onload = function(ev) {
+                            profilePic.src = ev.target.result;
+                        }
+                        reader.readAsDataURL(e.target.files[0]);
+                    }
+                };
+
+                // Edit bio
+                editBioBtn.onclick = function() {
+                    bioEdit.value = bioText.textContent;
+                    bioText.style.display = 'none';
+                    bioEdit.style.display = 'block';
+                    editBioBtn.style.display = 'none';
+                    saveBioBtn.style.display = 'inline-block';
+                };
+                saveBioBtn.onclick = function() {
+                    bioText.textContent = bioEdit.value;
+                    bioText.style.display = 'block';
+                    bioEdit.style.display = 'none';
+                    editBioBtn.style.display = 'inline-block';
+                    saveBioBtn.style.display = 'none';
+                    // Save to localStorage
+                    localStorage.setItem('bioText', bioEdit.value);
+                };
+            });
+            </script>
+        </section>
+    </main>
+</body>
+</html>

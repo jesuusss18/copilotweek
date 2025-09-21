@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Homepage</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>PhotoShare</h1>
+        <nav>
+                        <a href="profile.html" class="nav-icon" title="Profile">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="12" cy="8" r="4" fill="#222"/>
+                                    <rect x="4" y="16" width="16" height="4" rx="2" fill="#222"/>
+                                </svg>
+                        </a>
+                        <a href="index.html" class="nav-icon" title="Home">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="6" y="10" width="12" height="8" rx="2" fill="#222"/>
+                                    <polygon points="12,4 4,10 20,10" fill="#222"/>
+                                </svg>
+                        </a>
+                        <a href="share.html" class="nav-icon" title="Share">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="6" cy="12" r="3" fill="#222"/>
+                                    <circle cx="18" cy="6" r="3" fill="#222"/>
+                                    <circle cx="18" cy="18" r="3" fill="#222"/>
+                                    <line x1="8.5" y1="12" x2="15.5" y2="6" stroke="#222" stroke-width="2"/>
+                                    <line x1="8.5" y1="12" x2="15.5" y2="18" stroke="#222" stroke-width="2"/>
+                                </svg>
+                        </a>
+                        <a href="#" class="nav-icon" title="Logout">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="3" y="5" width="14" height="14" rx="2" fill="#222"/>
+                                    <polyline points="16,12 21,12 21,7" stroke="#ff6a88" stroke-width="2" fill="none"/>
+                                    <line x1="21" y1="12" x2="21" y2="17" stroke="#ff6a88" stroke-width="2"/>
+                                </svg>
+                        </a>
+        </nav>
+    </header>
+    <main>
+        <section class="feed">
+            <h2>Recent Posts</h2>
+            <div class="search-bar-container">
+                <input type="text" id="hashtagSearch" class="search-bar" placeholder="Search by hashtag...">
+                <button id="searchBtn" class="unified-btn" style="margin-left:1rem;">Search</button>
+            </div>
+            <div class="gallery">
+                <!-- 50 posts, each as a direct child of .gallery -->
+                <!-- Post 1 -->
+                <div class="post">
+                    <div class="post-image">
+                        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" alt="User Photo">
+                    </div>
+                    <div class="post-info">
+                        <span class="username">@naturelover</span>
+                        <p>Mountain view</p>
+                        <span class="hashtag">#nature</span>
+                        <div class="actions">
+                            <button class="unified-btn" onclick="increaseLike(this)">❤️ Like</button>
+                            <span class="likes">34 likes</span>
+                        </div>
+                        <div class="comments">
+                            <div class="comment"><b>@hiker:</b> Stunning!</div>
+                            <form class="comment-form" onsubmit="return addComment(event, this)">
+                                <input type="text" class="comment-input" placeholder="Add a comment..." />
+                                <button type="submit" class="unified-btn">Comment</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- Post 2 -->
+                <div class="post">
+                    <div class="post-image">
+                        <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca" alt="User Photo">
+                    </div>
+                    <div class="post-info">
+                        <span class="username">@citylife</span>
+                        <p>City lights</p>
+                        <span class="hashtag">#city</span>
+                        <div class="actions">
+                            <button class="unified-btn" onclick="increaseLike(this)">❤️ Like</button>
+                            <span class="likes">21 likes</span>
+                        </div>
+                        <div class="comments">
+                            <div class="comment"><b>@nightowl:</b> Love this!</div>
+                            <form class="comment-form" onsubmit="return addComment(event, this)">
+                                <input type="text" class="comment-input" placeholder="Add a comment..." />
+                                <button type="submit" class="unified-btn">Comment</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- Post 3 -->
+                <div class="post">
+                    <div class="post-image">
+                        <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308" alt="User Photo">
+                    </div>
+                    <div class="post-info">
+                        <span class="username">@foodie</span>
+                        <p>Delicious meal</p>
+                        <span class="hashtag">#food</span>
+                        <div class="actions">
+                            <button class="unified-btn" onclick="increaseLike(this)">❤️ Like</button>
+                            <span class="likes">15 likes</span>
+                        </div>
+                        <div class="comments">
+                            <div class="comment"><b>@chef:</b> Yum!</div>
+                            <form class="comment-form" onsubmit="return addComment(event, this)">
+                                <input type="text" class="comment-input" placeholder="Add a comment..." />
+                                <button type="submit" class="unified-btn">Comment</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- Post 4 -->
+                <div class="post">
+                    <div class="post-image">
+                        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" alt="User Photo">
+                    </div>
+                    <div class="post-info">
+                        <span class="username">@adventurer</span>
+                        <p>Exploring the wild</p>
+                        <span class="hashtag">#adventure</span>
+                        <div class="actions">
+                            <button class="unified-btn" onclick="increaseLike(this)">❤️ Like</button>
+                            <span class="likes">18 likes</span>
+                        </div>
+                        <div class="comments">
+                            <div class="comment"><b>@explorer:</b> Amazing!</div>
+                            <form class="comment-form" onsubmit="return addComment(event, this)">
+                                <input type="text" class="comment-input" placeholder="Add a comment..." />
+                                <button type="submit" class="unified-btn">Comment</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- Post 5 -->
+                <div class="post">
+                    <div class="post-image">
+                        <img src="https://images.unsplash.com/photo-1465101178521-c1a6bca7a0c1" alt="User Photo">
+                    </div>
+                    <div class="post-info">
+                        <span class="username">@beachbum</span>
+                        <p>Sunny beach day</p>
+                        <span class="hashtag">#beach</span>
+                        <div class="actions">
+                            <button class="unified-btn" onclick="increaseLike(this)">❤️ Like</button>
+                            <span class="likes">27 likes</span>
+                        </div>
+                        <div class="comments">
+                            <div class="comment"><b>@sunny:</b> Wish I was there!</div>
+                            <form class="comment-form" onsubmit="return addComment(event, this)">
+                                <input type="text" class="comment-input" placeholder="Add a comment..." />
+                                <button type="submit" class="unified-btn">Comment</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- Post 6 -->
+                <div class="post">
+                    <div class="post-image">
+                        <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca" alt="User Photo">
+                    </div>
+                    <div class="post-info">
+                        <span class="username">@urbanite</span>
+                        <p>Downtown vibes</p>
+                        <span class="hashtag">#urban</span>
+                        <div class="actions">
+                            <button class="unified-btn" onclick="increaseLike(this)">❤️ Like</button>
+                            <span class="likes">22 likes</span>
+                        </div>
+                        <div class="comments">
+                            <div class="comment"><b>@citygirl:</b> So cool!</div>
+                            <form class="comment-form" onsubmit="return addComment(event, this)">
+                                <input type="text" class="comment-input" placeholder="Add a comment..." />
+                                <button type="submit" class="unified-btn">Comment</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- Post 7 -->
+                <div class="post">
+                    <div class="post-image">
+                        <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308" alt="User Photo">
+                    </div>
+                    <div class="post-info">
+                        <span class="username">@chefmaster</span>
+                        <p>Gourmet dinner</p>
+                        <span class="hashtag">#gourmet</span>
+                        <div class="actions">
+                            <button class="unified-btn" onclick="increaseLike(this)">❤️ Like</button>
+                            <span class="likes">19 likes</span>
+                        </div>
+                        <div class="comments">
+                            <div class="comment"><b>@foodfan:</b> Looks delicious!</div>
+                            <form class="comment-form" onsubmit="return addComment(event, this)">
+                                <input type="text" class="comment-input" placeholder="Add a comment..." />
+                                <button type="submit" class="unified-btn">Comment</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- Post 8 -->
+                <div class="post">
+                    <div class="post-image">
+                        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" alt="User Photo">
+                    </div>
+                    <div class="post-info">
+                        <span class="username">@mountainman</span>
+                        <p>Peak moments</p>
+                        <span class="hashtag">#mountains</span>
+                        <div class="actions">
+                            <button class="unified-btn" onclick="increaseLike(this)">❤️ Like</button>
+                            <span class="likes">25 likes</span>
+                        </div>
+                        <div class="comments">
+                            <div class="comment"><b>@climber:</b> Inspiring!</div>
+                            <form class="comment-form" onsubmit="return addComment(event, this)">
+                                <input type="text" class="comment-input" placeholder="Add a comment..." />
+                                <button type="submit" class="unified-btn">Comment</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- Posts 9-50: similar structure, varied usernames, captions, hashtags, likes, and comments -->
+            <script>
+            // Add comment to post and save in localStorage
+            function addComment(event, form) {
+                event.preventDefault();
+                const input = form.querySelector('.comment-input');
+                const text = input.value.trim();
+                if (!text) return false;
+                const commentsDiv = form.parentElement;
+                // Create comment element
+                const commentEl = document.createElement('div');
+                commentEl.className = 'comment';
+                commentEl.innerHTML = `<b>@you:</b> ${text}`;
+                // Insert before the form
+                commentsDiv.insertBefore(commentEl, form);
+                // Save to localStorage (by post index)
+                const post = form.closest('.post');
+                const gallery = post.parentElement;
+                const posts = Array.from(gallery.children);
+                const postIndex = posts.indexOf(post);
+                let allComments = JSON.parse(localStorage.getItem('postComments') || '{}');
+                if (!allComments[postIndex]) allComments[postIndex] = [];
+                allComments[postIndex].push(text);
+                localStorage.setItem('postComments', JSON.stringify(allComments));
+                input.value = '';
+                return false;
+            }
+            // Load comments from localStorage
+            document.addEventListener('DOMContentLoaded', function() {
+                let allComments = JSON.parse(localStorage.getItem('postComments') || '{}');
+                const posts = document.querySelectorAll('.gallery .post');
+                posts.forEach((post, idx) => {
+                    const commentsDiv = post.querySelector('.comments');
+                    if (allComments[idx]) {
+                        allComments[idx].forEach(text => {
+                            const commentEl = document.createElement('div');
+                            commentEl.className = 'comment';
+                            commentEl.innerHTML = `<b>@you:</b> ${text}`;
+                            commentsDiv.insertBefore(commentEl, commentsDiv.querySelector('.comment-form'));
+                        });
+                    }
+                });
+            });
+            document.addEventListener('DOMContentLoaded', function() {
+                const searchInput = document.getElementById('hashtagSearch');
+                const searchBtn = document.getElementById('searchBtn');
+                const posts = document.querySelectorAll('.gallery .post');
+                function filterPosts() {
+                    const query = searchInput.value.trim().toLowerCase();
+                    posts.forEach(post => {
+                        const hashtag = post.querySelector('.hashtag');
+                        if (query && hashtag && hashtag.textContent.toLowerCase().includes(query)) {
+                            post.style.display = '';
+                        } else {
+                            post.style.display = 'none';
+                        }
+                    });
+                    // If no query, show all posts
+                    if (!query) {
+                        posts.forEach(post => post.style.display = '');
+                    }
+                }
+                searchBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    filterPosts();
+                });
+                searchInput.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        filterPosts();
+                    }
+                });
+            });
+            </script>
+            </script>
+        </section>
+    </main>
+</body>
+</html>

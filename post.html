@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post a Picture</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>PhotoShare</h1>
+        <nav>
+                        <a href="profile.html" class="nav-icon" title="Profile">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="12" cy="8" r="4" fill="#222"/>
+                                    <rect x="4" y="16" width="16" height="4" rx="2" fill="#222"/>
+                                </svg>
+                        </a>
+                        <a href="index.html" class="nav-icon" title="Home">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="6" y="10" width="12" height="8" rx="2" fill="#222"/>
+                                    <polygon points="12,4 4,10 20,10" fill="#222"/>
+                                </svg>
+                        </a>
+                        <a href="share.html" class="nav-icon" title="Share">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="6" cy="12" r="3" fill="#222"/>
+                                    <circle cx="18" cy="6" r="3" fill="#222"/>
+                                    <circle cx="18" cy="18" r="3" fill="#222"/>
+                                    <line x1="8.5" y1="12" x2="15.5" y2="6" stroke="#222" stroke-width="2"/>
+                                    <line x1="8.5" y1="12" x2="15.5" y2="18" stroke="#222" stroke-width="2"/>
+                                </svg>
+                        </a>
+                        <a href="#" class="nav-icon" title="Logout">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="3" y="5" width="14" height="14" rx="2" fill="#222"/>
+                                    <polyline points="16,12 21,12 21,7" stroke="#ff6a88" stroke-width="2" fill="none"/>
+                                    <line x1="21" y1="12" x2="21" y2="17" stroke="#ff6a88" stroke-width="2"/>
+                                </svg>
+                        </a>
+        </nav>
+    </header>
+    <main>
+        <section class="share">
+            <h2>Post a New Picture</h2>
+            <form>
+                <input type="file" accept="image/*">
+                <input type="text" placeholder="Caption...">
+                <button type="submit" class="unified-btn">Post</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
